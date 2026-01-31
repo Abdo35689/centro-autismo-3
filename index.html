@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro BluMente – Autismo, Valutazione e Interventi Personalizzati</title>
+  <meta name="description" content="Centro BluMente: valutazione diagnostica, interventi psicoeducativi, supporto alla scuola e alle famiglie per bambini e ragazzi nello spettro autistico.">
+  <style>
+    :root {
+      --colore-primario: #1f4f7b;
+      --colore-secondario: #2f7fa8;
+      --colore-accento: #36b2a7;
+      --colore-sfondo: #f4f8fb;
+      --colore-testo: #163047;
+      --colore-card: #ffffff;
+      --ombra-morbida: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --raggio-card: 18px;
+      --spazio-sezione: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--colore-testo);
+      background-color: var(--colore-sfondo);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout base */
+
+    .container {
+      width: min(1120px, 100% - 32px);
+      margin: 0 auto;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 248, 251, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(22, 48, 71, 0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--colore-primario), var(--colore-secondario));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 8px 18px rgba(31, 79, 123, 0.35);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 18px;
+    }
+
+    .logo-text span:last-child {
+      font-size: 12px;
+      color: rgba(22, 48, 71, 0.7);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+    }
+
+    nav a {
+      position: relative;
+      padding-block: 4px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--colore-accento);
+      border-radius: 999px;
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--colore-accento);
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(54, 178, 167, 0.35);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .nav-cta:hover {
+      filter: brightness(1.05);
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .burger span {
+      width: 20px;
+      height: 2px;
+      background: var(--colore-testo);
+      border-radius: 999px;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 32px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(47, 127, 168, 0.06);
+      font-size: 12px;
+      color: rgba(22, 48, 71, 0.8);
+      margin-bottom: 14px;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #3ddc97;
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 38px);
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: rgba(22, 48, 71, 0.78);
+      margin-bottom: 22px;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .btn-primario {
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--colore-primario), var(--colore-secondario));
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(31, 79, 123, 0.35);
+      font-size: 14px;
+    }
+
+    .btn-secondario {
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(22, 48, 71, 0.18);
+      background: #ffffff;
+      color: var(--colore-testo);
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: rgba(22, 48, 71, 0.6);
+    }
+
+    .hero-meta strong {
+      font-weight: 600;
+    }
+
+    .hero-card {
+      background: var(--colore-card);
+      border-radius: 24px;
+      padding: 20px 18px;
+      box-shadow: var(--ombra-morbida);
+      border: 1px solid rgba(22, 48, 71, 0.05);
+    }
+
+    .hero-card-tag {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(54, 178, 167, 0.06);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(22, 48, 71, 0.7);
+      margin-bottom: 12px;
+    }
+
+    .hero-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+      font-size: 13px;
+    }
+
+    .hero-point-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: rgba(22, 48, 71, 0.6);
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .hero-point-value {
+      font-weight: 600;
+    }
+
+    /* Sezioni generali */
+
+    section {
+      padding: var(--spazio-sezione) 0;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(22, 48, 71, 0.6);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: rgba(22, 48, 71, 0.7);
+      max-width: 520px;
+    }
+
+    /* Griglie e card */
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--colore-card);
+      border-radius: var(--raggio-card);
+      padding: 18px 18px 20px;
+      box-shadow: var(--ombra-morbida);
+      border: 1px solid rgba(22, 48, 71, 0.04);
+    }
+
+    .card-small {
+      padding: 14px 14px 16px;
+      border-radius: 14px;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background: rgba(31, 79, 123, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .card-text {
+      font-size: 13px;
+      color: rgba(22, 48, 71, 0.75);
+    }
+
+    /* Sezione “Per chi è” */
+
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .target-item {
+      border-radius: 18px;
+      background: linear-gradient(145deg, #ffffff, #f5f8fc);
+      padding: 16px 16px 18px;
+      border: 1px solid rgba(22, 48, 71, 0.05);
+    }
+
+    .target-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .target-text {
+      font-size: 13px;
+      color: rgba(22, 48, 71, 0.7);
+    }
+
+    /* Servizi principali */
+
+    .servizi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .servizio-pill {
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 13px;
+      border: 1px solid rgba(22, 48, 71, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .servizio-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--colore-accento);
+    }
+
+    /* Sezione “Strutture” */
+
+    .strutture-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .struttura-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: var(--ombra-morbida);
+      border: 1px solid rgba(22, 48, 71, 0.04);
+    }
+
+    .struttura-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(22, 48, 71, 0.6);
+      margin-bottom: 6px;
+    }
+
+    .struttura-titolo {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .struttura-text {
+      font-size: 13px;
+      color: rgba(22, 48, 71, 0.75);
+    }
+
+    /* Sezione testimonianze */
+
+    .testimonianze-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .testimonial {
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      background: #ffffff;
+      border: 1px solid rgba(22, 48, 71, 0.05);
+      box-shadow: var(--ombra-morbida);
+      font-size: 13px;
+    }
+
+    .testimonial-quote {
+      margin-bottom: 10px;
+    }
+
+    .testimonial-author {
+      font-size: 12px;
+      color: rgba(22, 48, 71, 0.8);
+      font-weight: 600;
+    }
+
+    .testimonial-role {
+      font-size: 11px;
+      color: rgba(22, 48, 71, 0.6);
+    }
+
+    /* Sezione contatto rapido */
+
+    .contatto-rapido {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contatto-box {
+      background: linear-gradient(135deg, #1f4f7b, #2f7fa8);
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 22px 22px 24px;
+      box-shadow: 0 18px 40px rgba(14, 48, 82, 0.55);
+    }
+
+    .contatto-box h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .contatto-box p {
+      font-size: 14px;
+      margin-bottom: 14px;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .contatto-dati {
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .contatto-dati div {
+      margin-bottom: 4px;
+    }
+
+    .contatto-note {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 18px 18px 20px;
+      box-shadow: var(--ombra-morbida);
+      border: 1px solid rgba(22, 48, 71, 0.05);
+      font-size: 13px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    label {
+      font-size: 12px;
+      color: rgba(22, 48, 71, 0.8);
+    }
+
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 13px;
+      padding: 8px 9px;
+      border-radius: 10px;
+      border: 1px solid rgba(22, 48, 71, 0.18);
+      background: #f8fbff;
+      outline: none;
+      transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--colore-accento);
+      box-shadow: 0 0 0 1px rgba(54, 178, 167, 0.35);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .form-footer-note {
+      font-size: 11px;
+      color: rgba(22, 48, 71, 0.7);
+      margin-top: 6px;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: 42px;
+      padding: 18px 0 26px;
+      border-top: 1px solid rgba(22, 48, 71, 0.08);
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    .footer-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-bottom {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(22, 48, 71, 0.6);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Responsivo */
+
+    @media (max-width: 880px) {
+      nav {
+        display: none;
+      }
+
+      .burger {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .grid-3,
+      .target-grid,
+      .servizi-grid,
+      .strutture-grid,
+      .testimonianze-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contatto-rapido {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      section {
+        padding: 52px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .servizi-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="logo-mark" aria-hidden="true">B</div>
+        <div class="logo-text">
+          <span>Centro BluMente</span>
+          <span>Autismo · Valutazione · Interventi</span>
+        </div>
+      </div>
+
+      <nav aria-label="Navigazione principale">
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#strutture">Strutture</a>
+        <a href="#risorse">Risorse</a>
+        <a href="#testimonianze">Storie</a>
+        <button class="nav-cta" onclick="document.getElementById('contatti').scrollIntoView({behavior:'smooth'})">
+          Prenota un colloquio
+        </button>
+      </nav>
+
+      <button class="burger" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            <span>Spazio dedicato a bambini, ragazzi e famiglie nello spettro autistico</span>
+          </div>
+          <h1 class="hero-title">
+            Un centro pensato per capire, accogliere e valorizzare l’unicità di ogni persona nello spettro autistico.
+          </h1>
+          <p class="hero-subtitle">
+            Al Centro BluMente accompagniamo bambini, adolescenti e famiglie con percorsi personalizzati di valutazione,
+            intervento psicoeducativo e supporto alla scuola, in un ambiente strutturato ma sereno.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn-primario" onclick="document.getElementById('contatti').scrollIntoView({behavior:'smooth'})">
+              Prenota un primo colloquio
+            </button>
+            <button class="btn-secondario" onclick="document.getElementById('servizi').scrollIntoView({behavior:'smooth'})">
+              Scopri i nostri servizi
+            </button>
+          </div>
+
+          <p class="hero-meta">
+            <strong>Approccio psicoeducativo</strong> basato su evidenze, con attenzione alla relazione, alle autonomie
+            quotidiane e alla collaborazione con scuola e famiglia.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Panoramica rapida del centro">
+          <div class="hero-card-tag">Panoramica centro</div>
+          <h2 class="hero-card-title">Centro BluMente – in breve</h2>
+          <div class="hero-card-grid">
+            <div>
+              <div class="hero-point-label">Età prevalente</div>
+              <div class="hero-point-value">3–18 anni</div>
+            </div>
+            <div>
+              <div class="hero-point-label">Tipologia percorsi</div>
+              <div class="hero-point-value">Individuali e di gruppo</div>
+            </div>
+            <div>
+              <div class="hero-point-label">Ambiti di lavoro</div>
+              <div class="hero-point-value">Comunicazione, autonomie, scuola</div>
+            </div>
+            <div>
+              <div class="hero-point-label">Figure coinvolte</div>
+              <div class="hero-point-value">Psicologi, educatori, logopedisti</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PER CHI È -->
+    <section id="chi-siamo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Per chi è il centro</div>
+          <h2 class="section-title">Un punto di riferimento per famiglie, scuola e professionisti</h2>
+          <p class="section-subtitle">
+            Il Centro BluMente si rivolge a chi cerca un luogo competente e accogliente per comprendere meglio l’autismo
+            e costruire insieme percorsi concreti di supporto.
+          </p>
+        </div>
+
+        <div class="target-grid">
+          <article class="target-item">
+            <h3 class="target-label">Genitori e familiari</h3>
+            <p class="target-text">
+              Offriamo colloqui di orientamento, percorsi di accompagnamento dopo la diagnosi e momenti di confronto
+              per non sentirsi soli nelle scelte quotidiane.
+            </p>
+          </article>
+
+          <article class="target-item">
+            <h3 class="target-label">Insegnanti ed educatori</h3>
+            <p class="target-text">
+              Supportiamo scuole ed enti educativi nella lettura dei bisogni, nella stesura di PEI e PDP e nella
+              strutturazione di ambienti e materiali didattici più accessibili.
+            </p>
+          </article>
+
+          <article class="target-item">
+            <h3 class="target-label">Professionisti della salute</h3>
+            <p class="target-text">
+              Collaboriamo con neuropsichiatri infantili, pediatri e altri servizi, inserendo i nostri interventi
+              psicoeducativi all’interno di una presa in carico integrata.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIZI -->
+    <section id="servizi">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Cosa facciamo</div>
+          <h2 class="section-title">Servizi dedicati allo spettro autistico</h2>
+          <p class="section-subtitle">
+            Interventi psicoeducativi, consulenze e accompagnamento alla vita quotidiana, sempre adattati all’età,
+            agli interessi e alle caratteristiche della persona.
+          </p>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 20px;">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🧩</div>
+            <h3 class="card-title">Valutazione e definizione del progetto</h3>
+            <p class="card-text">
+              Colloqui di accoglienza, raccolta della storia e osservazioni strutturate per costruire un quadro chiaro
+              del funzionamento della persona e definire obiettivi realistici e condivisi con la famiglia.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📚</div>
+            <h3 class="card-title">Interventi psicoeducativi individuali</h3>
+            <p class="card-text">
+              Percorsi centrati su comunicazione, autonomie personali, gioco, gestione delle transizioni e abilità
+              sociali, utilizzando supporti visivi e strategie strutturate adatte allo stile di funzionamento.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3 class="card-title">Laboratori e gruppi</h3>
+            <p class="card-text">
+              Piccoli gruppi per esercitare abilità sociali, cooperazione, attività pratiche e creatività, con
+              obiettivi chiari e regole prevedibili per ridurre l’ansia e facilitare la partecipazione.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🏫</div>
+            <h3 class="card-title">Consulenza a scuola e alla famiglia</h3>
+            <p class="card-text">
+              Incontri con insegnanti e caregiver per adattare routine, materiali e modalità di comunicazione,
+              favorendo una maggiore coerenza tra casa, scuola e contesti extrascolastici.
+            </p>
+          </article>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <div class="servizi-grid">
+            <div class="servizio-pill">
+              <span class="servizio-dot"></span>
+              Valutazione funzionale e profilo di sviluppo
+            </div>
+            <div class="servizio-pill">
+              <span class="servizio-dot"></span>
+              Programmi per autonomie quotidiane
+            </div>
+            <div class="servizio-pill">
+              <span class="servizio-dot"></span>
+              Supporto alla comunicazione (CAA, supporti visivi)
+            </div>
+            <div class="servizio-pill">
+              <span class="servizio-dot"></span>
+              Sportello di ascolto per genitori
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRUTTURE -->
+    <section id="strutture">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Gli spazi</div>
+          <h2 class="section-title">Ambienti strutturati e rassicuranti</h2>
+          <p class="section-subtitle">
+            Ogni ambiente del centro è pensato per ridurre la confusione, rendere prevedibili le attività e offrire
+            stimoli sensoriali adeguati ai diversi profili.
+          </p>
+        </div>
+
+        <div class="strutture-grid">
+          <article class="struttura-card">
+            <div class="struttura-tag">Stanza dedicata</div>
+            <h3 class="struttura-titolo">Sala sensoriale</h3>
+            <p class="struttura-text">
+              Uno spazio con luci morbide, materiali tattili selezionati e zone di calma, pensato per favorire
+              la regolazione sensoriale e la possibilità di pause protette durante le attività.
+            </p>
+          </article>
+
+          <article class="struttura-card">
+            <div class="struttura-tag">Area strutturata</div>
+            <h3 class="struttura-titolo">Spazio attività e gioco</h3>
+            <p class="struttura-text">
+              Tavoli di lavoro, angoli gioco e materiali organizzati per attività individuali o a piccolo gruppo,
+              con supporti visivi che aiutano a capire cosa fare, dove e per quanto tempo.
+            </p>
+          </article>
+
+          <article class="struttura-card">
+            <div class="struttura-tag">Laboratori</div>
+            <h3 class="struttura-titolo">Cucina educativa e attività pratiche</h3>
+            <p class="struttura-text">
+              Laboratori dedicati a autonomie di base (merenda, preparazione di semplici ricette, riordino),
+              per allenare sequenze di azioni, comprensione di istruzioni e collaborazione.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIANZE -->
+    <section id="testimonianze">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Voci dal centro</div>
+          <h2 class="section-title">Esperienze di chi ci ha scelto</h2>
+          <p class="section-subtitle">
+            Alcuni racconti, in forma anonima, che descrivono cosa ha significato per famiglie e ragazzi intraprendere
+            un percorso con noi.
+          </p>
+        </div>
+
+        <div class="testimonianze-grid">
+          <article class="testimonial">
+            <p class="testimonial-quote">
+              «Dopo la diagnosi eravamo spaesati. Qui abbiamo trovato persone che ci hanno spiegato con calma cosa
+              significavano quei termini tecnici e come tradurli nella vita di tutti i giorni.»
+            </p>
+            <div class="testimonial-author">Mamma di un bambino di 6 anni</div>
+            <div class="testimonial-role">Percorso psicoeducativo e supporto scuola</div>
+          </article>
+
+          <article class="testimonial">
+            <p class="testimonial-quote">
+              «Le schede visive e le piccole modifiche alla classe suggerite dal centro hanno cambiato il clima in aula:
+              l’alunno è più sereno e anche i compagni lo capiscono meglio.»
+            </p>
+            <div class="testimonial-author">Insegnante di scuola primaria</div>
+            <div class="testimonial-role">Consulenza educativa e PEI</div>
+          </article>
+
+          <article class="testimonial">
+            <p class="testimonial-quote">
+              «Mi piace che qui non devo “fare finta di essere un’altra persona”. Lavoriamo sugli obiettivi, ma
+              partendo da quello che so fare e da quello che mi interessa davvero.»
+            </p>
+            <div class="testimonial-author">Ragazzo di 15 anni</div>
+            <div class="testimonial-role">Laboratorio abilità sociali e autonomie</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTO RAPIDO -->
+    <section id="contatti">
+      <div class="container contatto-rapido">
+        <div class="contatto-box">
+          <h2>Parliamone insieme</h2>
+          <p>
+            Un primo colloquio serve per conoscerci, ascoltare la vostra storia e capire se e come il Centro BluMente
+            può essere il luogo adatto per voi.
+          </p>
+
+          <div class="contatto-dati">
+            <div><strong>Centro BluMente – Spazio per l’Autismo</strong></div>
+            <div>Via Esempio 123, 20100 Milano (MI)</div>
+            <div>Telefono: 000 000 000</div>
+            <div>Email: info.centroautismo@gmail.com</div>
+          </div>
+
+          <p class="contatto-note">
+            Non è necessario avere già una diagnosi per contattarci. Possiamo aiutarvi a capire quali passi fare
+            e con quali tempi, in collaborazione con i servizi del territorio.
+          </p>
+        </div>
+
+        <div class="form-card">
+          <form action="https://formsubmit.co/info.centroautismo@gmail.com" method="POST">
+            <!-- sostituisci l’URL qui sopra con quello che usi attualmente, se diverso -->
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome e cognome</label>
+                <input type="text" id="nome" name="nome" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Telefono (opzionale)</label>
+                <input type="tel" id="telefono" name="telefono">
+              </div>
+              <div class="form-group">
+                <label for="motivo">Motivo del contatto</label>
+                <select id="motivo" name="motivo" required>
+                  <option value="">Seleziona un’opzione</option>
+                  <option value="primo-colloquio">Primo colloquio conoscitivo</option>
+                  <option value="informazioni-servizi">Informazioni sui servizi</option>
+                  <option value="supporto-scuola">Supporto a scuola</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="messaggio">Raccontaci brevemente la tua richiesta</label>
+              <textarea id="messaggio" name="messaggio" required></textarea>
+            </div>
+
+            <!-- Opzioni FormSubmit (personalizza se le usi già) -->
+            <input type="hidden" name="_next" value="https://abdo35689.github.io/centro-autismo/successo.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <button type="submit" class="btn-primario" style="margin-top: 6px;">
+              Invia richiesta
+            </button>
+
+            <p class="form-footer-note">
+              I dati inseriti verranno utilizzati esclusivamente per ricontattarti in merito alla tua richiesta,
+              secondo la normativa vigente sulla privacy.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">Centro BluMente</div>
+          <p>
+            Spazio dedicato a bambini, ragazzi e famiglie nello spettro autistico, con percorsi di valutazione,
+            intervento psicoeducativo e supporto ai contesti di vita quotidiani.
+          </p>
+        </div>
+        <div>
+          <div class="footer-title">Navigazione</div>
+          <div class="footer-links">
+            <a href="#chi-siamo">Chi siamo</a>
+            <a href="#servizi">Servizi</a>
+            <a href="#strutture">Strutture</a>
+            <a href="#testimonianze">Storie</a>
+            <a href="#contatti">Contatti</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Contatti rapidi</div>
+          <div class="footer-links">
+            <span>Via Esempio 123, 20100 Milano (MI)</span>
+            <a href="mailto:info.centroautismo@gmail.com">info.centroautismo@gmail.com</a>
+            <span>Tel. 000 000 000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Centro BluMente. Tutti i diritti riservati.</span>
+        <span>Questo sito ha finalità informative e non sostituisce un consulto medico specialistico.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
