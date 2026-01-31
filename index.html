@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Centro BluMente – Autismo, Valutazione e Interventi</title>
-  <meta name="description" content="Centro BluMente: valutazione, interventi psicoeducativi e supporto per famiglie, scuola e ragazzi nello spettro autistico, con percorsi personalizzati." />
+  <title>Centro BluMente – Autismo, ABA, TEACCH e Interventi Psicoeducativi</title>
+  <meta name="description" content="Centro BluMente: spiegazioni chiare su autismo, metodi ABA e TEACCH, e percorsi professionali di valutazione e intervento psicoeducativo per famiglie, scuola e ragazzi." />
   <style>
     :root {
       --blu-scuro: #132c4a;
@@ -36,6 +36,8 @@
     img {
       max-width: 100%;
       display: block;
+      border-radius: 14px;
+      object-fit: cover;
     }
 
     a {
@@ -495,7 +497,7 @@
       z-index: 1;
     }
 
-    /* SERVIZI PILL */
+    /* PILL SERVIZI */
 
     .pill-row {
       display: flex;
@@ -537,7 +539,6 @@
       border: 1px solid rgba(19, 44, 74, 0.06);
       box-shadow: var(--ombra-morbida);
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      cursor: default;
     }
 
     .struttura-card:hover {
@@ -563,6 +564,30 @@
     .struttura-text {
       font-size: 13px;
       color: rgba(19, 44, 74, 0.8);
+    }
+
+    /* GALLERIE IMMAGINI */
+
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .img-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figure figcaption {
+      font-size: 11px;
+      color: rgba(19, 44, 74, 0.7);
+      margin-top: 4px;
     }
 
     /* TESTIMONIANZE */
@@ -608,7 +633,7 @@
       color: rgba(19, 44, 74, 0.65);
     }
 
-    /* FAQ INTERATTIVE */
+    /* FAQ */
 
     .faq-grid {
       display: grid;
@@ -673,7 +698,7 @@
       transform: rotate(90deg);
     }
 
-    /* CONTATTI INTERATTIVI */
+    /* CONTATTI */
 
     .contatto-rapido {
       display: grid;
@@ -841,7 +866,7 @@
       align-items: center;
     }
 
-    /* ANIMAZIONI SCROLL (INTERATTIVO MA CALMO) */
+    /* REVEAL */
 
     .reveal {
       opacity: 0;
@@ -884,6 +909,10 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
+      .img-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       section {
         padding: 56px 0;
       }
@@ -916,6 +945,11 @@
       .footer-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .img-grid-2,
+      .img-grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
@@ -934,6 +968,8 @@
       <nav aria-label="Navigazione principale" id="nav-desktop">
         <a data-target="chi-siamo">Chi siamo</a>
         <a data-target="servizi">Servizi</a>
+        <a data-target="autismo">Autismo</a>
+        <a data-target="metodi">ABA &amp; TEACCH</a>
         <a data-target="strutture">Strutture</a>
         <a data-target="faq">FAQ</a>
         <a data-target="contatti">Contatti</a>
@@ -952,6 +988,8 @@
     <div class="container nav-mobile" id="nav-mobile" aria-label="Navigazione mobile" style="display:none;">
       <a data-target="chi-siamo">Chi siamo</a>
       <a data-target="servizi">Servizi</a>
+      <a data-target="autismo">Autismo</a>
+      <a data-target="metodi">ABA &amp; TEACCH</a>
       <a data-target="strutture">Strutture</a>
       <a data-target="faq">FAQ</a>
       <a data-target="contatti">Contatti</a>
@@ -968,25 +1006,25 @@
             <span>Centro dedicato a bambini, ragazzi e famiglie nello spettro autistico</span>
           </div>
           <h1 class="hero-title">
-            Un centro professionale per comprendere, accompagnare e valorizzare ogni profilo autistico.
+            Un centro professionale per comprendere, spiegare e accompagnare l’autismo nel quotidiano.
           </h1>
           <p class="hero-subtitle">
-            Al Centro BluMente uniamo competenze cliniche e approccio psicoeducativo per costruire percorsi concreti,
-            personalizzati e condivisi con famiglia e scuola.
+            Al Centro BluMente uniamo spiegazioni chiare su autismo, ABA e TEACCH a percorsi concreti di intervento,
+            pensati insieme alla famiglia e alla scuola.
           </p>
 
           <div class="hero-actions">
             <button class="btn-primario" data-target="contatti">
               Prenota un primo colloquio
             </button>
-            <button class="btn-secondario" data-target="servizi">
-              Esplora i percorsi disponibili
+            <button class="btn-secondario" data-target="autismo">
+              Inizia a capire cos’è l’autismo
             </button>
           </div>
 
           <p class="hero-meta">
-            <strong>Equipe multidisciplinare</strong> con psicologi, educatori, logopedisti e figure sanitarie in rete
-            con i servizi del territorio, per accompagnare in modo continuativo lo sviluppo.
+            <strong>Equipe multidisciplinare</strong> e approccio psicoeducativo basato su evidenze, con attenzione
+            alla qualità di vita e alla partecipazione nei diversi contesti.
           </p>
         </div>
 
@@ -1000,8 +1038,8 @@
           </div>
           <h2 class="hero-panel-title">Come può aiutarti il Centro BluMente</h2>
           <p class="hero-panel-text">
-            Dalla prima consulenza alla progettazione educativa, ti accompagniamo passo dopo passo, con obiettivi chiari,
-            verifiche periodiche e un linguaggio comprensibile.
+            Uno spazio dove ricevere spiegazioni accessibili, strumenti pratici e percorsi strutturati,
+            senza perdere di vista la persona dietro ogni diagnosi.
           </p>
           <div class="hero-panel-grid">
             <div>
@@ -1009,58 +1047,81 @@
               <div class="hero-value">3–18 anni</div>
             </div>
             <div>
-              <div class="hero-label">Tipi di intervento</div>
+              <div class="hero-label">Tipi di percorsi</div>
               <div class="hero-value">Individuali e di gruppo</div>
             </div>
             <div>
-              <div class="hero-label">Ambiti di lavoro</div>
+              <div class="hero-label">Ambiti</div>
               <div class="hero-value">Comunicazione, autonomie, scuola</div>
             </div>
             <div>
               <div class="hero-label">Primo contatto</div>
-              <div class="hero-value">Colloquio conoscitivo</div>
+              <div class="hero-value">Colloquio di orientamento</div>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- CHI SIAMO / PER CHI È -->
+    <!-- CHI SIAMO -->
     <section id="chi-siamo">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-kicker">Chi seguiamo</div>
-          <h2 class="section-title">Un punto di riferimento per chi vive e lavora con l’autismo</h2>
+          <div class="section-kicker">Chi siamo</div>
+          <h2 class="section-title">Un centro che mette al centro le persone, non le etichette</h2>
           <p class="section-subtitle">
-            Il centro nasce per offrire un luogo competente e accogliente in cui famiglie, scuole e professionisti
-            possano confrontarsi, progettare e monitorare insieme i percorsi.
+            Il Centro BluMente nasce dall’incontro tra professionisti della salute, educatori e famiglie che
+            desiderano un luogo in cui l’autismo venga compreso e spiegato con rispetto e chiarezza.
           </p>
         </div>
 
-        <div class="target-grid reveal">
-          <article class="target-item">
-            <h3 class="target-label">Genitori e familiari</h3>
-            <p class="target-text">
-              Colloqui di orientamento, accompagnamento dopo la diagnosi, gruppi di confronto e strumenti pratici per
-              gestire routine, comunicazione e cambiamenti nella quotidianità.
-            </p>
-          </article>
+        <div class="grid-2 reveal" style="align-items:flex-start;">
+          <div>
+            <div class="target-grid">
+              <article class="target-item">
+                <h3 class="target-label">Genitori e familiari</h3>
+                <p class="target-text">
+                  Colloqui di orientamento, accompagnamento dopo la diagnosi, gruppi di confronto e strumenti pratici
+                  per gestire routine, comunicazione e cambiamenti nella quotidianità. [web:71]
+                </p>
+              </article>
 
-          <article class="target-item">
-            <h3 class="target-label">Scuole ed educatori</h3>
-            <p class="target-text">
-              Consulenza su PEI e attività, osservazioni in classe, suggerimenti per adattare ambienti e materiali,
-              formazione per docenti e educatori interessati ad approfondire lo spettro autistico.
-            </p>
-          </article>
+              <article class="target-item">
+                <h3 class="target-label">Scuole ed educatori</h3>
+                <p class="target-text">
+                  Consulenza su PEI, osservazioni in classe, suggerimenti per adattare ambienti e materiali,
+                  formazione mirata per chi lavora ogni giorno con studenti nello spettro. [web:71][web:78]
+                </p>
+              </article>
 
-          <article class="target-item">
-            <h3 class="target-label">Servizi e professionisti</h3>
-            <p class="target-text">
-              Collaborazioni con neuropsichiatria infantile, pediatri e altri servizi, per integrare il lavoro
-              psicoeducativo con quello clinico e mantenere una visione condivisa.
+              <article class="target-item">
+                <h3 class="target-label">Servizi e professionisti</h3>
+                <p class="target-text">
+                  Collaborazioni con neuropsichiatria infantile, pediatri e altri servizi, per integrare il lavoro
+                  psicoeducativo con quello clinico e mantenere una visione condivisa. [web:66][web:69]
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="card">
+            <div class="card-icon" aria-hidden="true">🖼️</div>
+            <h3 class="card-title">Uno sguardo sugli spazi</h3>
+            <p class="card-text" style="margin-bottom:10px;">
+              Ambienti calmi, colori morbidi, indicazioni visive chiare: elementi che favoriscono la prevedibilità
+              e riducono il sovraccarico sensoriale per molte persone nello spettro. [web:72][web:75]
             </p>
-          </article>
+            <div class="img-grid-2">
+              <figure>
+                <img src="img/sala-sensoriale.jpg" alt="Sala sensoriale con luci morbide e angoli morbidi" />
+                <figcaption>Un esempio di sala sensoriale con luci regolabili e angoli di calma.</figcaption>
+              </figure>
+              <figure>
+                <img src="img/spazio-lavoro-strutturato.jpg" alt="Spazio di lavoro strutturato con tavoli e supporti visivi" />
+                <figcaption>Spazio di lavoro strutturato con materiali ben visibili e organizzati.</figcaption>
+              </figure>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -1072,18 +1133,19 @@
           <div class="section-kicker">Cosa facciamo</div>
           <h2 class="section-title">Servizi professionali per lo spettro autistico</h2>
           <p class="section-subtitle">
-            Dalla valutazione iniziale ai labouratori di gruppo, ogni intervento è progettato a partire dal profilo
-            e dagli interessi della persona, con obiettivi misurabili e condivisi.
+            Dalla valutazione iniziale ai laboratori di gruppo, ogni intervento è progettato a partire dal profilo,
+            dai punti di forza e dagli interessi della persona.
           </p>
         </div>
 
         <div class="grid-2 reveal">
           <article class="card">
             <div class="card-icon" aria-hidden="true">📊</div>
-            <h3 class="card-title">Valutazione funzionale e definizione del progetto</h3>
+            <h3 class="card-title">Valutazione funzionale e progetto</h3>
             <p class="card-text">
-              Incontri di approfondimento con la famiglia, raccolta della storia, osservazioni strutturate e analisi
-              delle competenze per delineare un profilo chiaro e impostare un progetto di intervento realistico.
+              Incontri con la famiglia, raccolta della storia, osservazioni strutturate e analisi delle competenze per
+              delineare un profilo chiaro e impostare un progetto personalizzato, condiviso con genitori e, se possibile,
+              con scuola e servizi. [web:66][web:69]
             </p>
           </article>
 
@@ -1091,19 +1153,20 @@
             <div class="card-icon" aria-hidden="true">🧩</div>
             <h3 class="card-title">Interventi psicoeducativi individuali</h3>
             <p class="card-text">
-              Percorsi personalizzati su comunicazione, abilità sociali, gioco, autonomie personali e gestione delle
-              transizioni, con uso di supporti visivi e strategie strutturate adatte al profilo.
+              Percorsi centrati su comunicazione, abilità sociali, gioco, autonomie personali e gestione delle
+              transizioni, con uso di supporti visivi e strategie strutturate ispirate a metodi come TEACCH e ABA,
+              adattate alla persona. [web:67][web:73]
             </p>
           </article>
         </div>
 
-        <div class="grid-2 reveal" style="margin-top: 18px;">
+        <div class="grid-2 reveal" style="margin-top:18px;">
           <article class="card">
             <div class="card-icon" aria-hidden="true">🤝</div>
             <h3 class="card-title">Laboratori e gruppi</h3>
             <p class="card-text">
-              Piccoli gruppi per esercitare abilità sociali, collaborazione, attività pratiche e interessi specifici,
-              con regole chiare, tempi definiti e spazi prevedibili per ridurre l’ansia.
+              Piccoli gruppi per allenare abilità sociali, collaborazione, attività pratiche e interessi specifici,
+              in un contesto strutturato ma sereno, con regole e tempi esplicitati in anticipo. [web:67]
             </p>
           </article>
 
@@ -1111,8 +1174,8 @@
             <div class="card-icon" aria-hidden="true">🏫</div>
             <h3 class="card-title">Consulenza a scuola e alla famiglia</h3>
             <p class="card-text">
-              Incontri con insegnanti e caregiver per progettare insieme obiettivi, adattare routine, creare strumenti
-              visivi condivisi e favorire coerenza tra casa, scuola e contesti extrascolastici.
+              Incontri con insegnanti e caregiver per progettare insieme obiettivi, adattare routine, creare agende e
+              materiali visivi condivisi e favorire la coerenza tra casa, scuola e altri contesti. [web:71][web:78]
             </p>
           </article>
         </div>
@@ -1138,6 +1201,170 @@
       </div>
     </section>
 
+    <!-- AUTISMO SPIEGATO -->
+    <section id="autismo">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-kicker">Capire lo spettro</div>
+          <h2 class="section-title">Che cos’è l’autismo, in parole semplici</h2>
+          <p class="section-subtitle">
+            Parliamo di spettro autistico perché esistono molti modi diversi di percepire, comunicare e organizzare
+            informazioni e relazioni. Non esiste un’unica “immagine” dell’autismo. [web:71][web:78]
+          </p>
+        </div>
+
+        <div class="grid-2 reveal" style="align-items:flex-start;">
+          <article>
+            <h3 class="card-title" style="margin-bottom:6px;">Alcune caratteristiche possibili</h3>
+            <p class="card-text" style="margin-bottom:10px;">
+              Le persone nello spettro possono avere differenze nella comunicazione, nel modo di stare con gli altri
+              e nella gestione di sensazioni e cambiamenti. Non significa assenza di capacità, ma un diverso modo di
+              funzionare che richiede contesti e strategie adeguate. [web:71][web:78]
+            </p>
+            <ul class="card-text" style="padding-left:18px; list-style:disc;">
+              <li>difficoltà a comprendere alcune regole sociali implicite o l’ironia;</li>
+              <li>interessi molto intensi e specifici, che possono diventare competenze se valorizzati;</li>
+              <li>ipersensibilità o iposensibilità a suoni, luci, odori, contatto corporeo;</li>
+              <li>bisogno di routine chiare e prevedibili per sentirsi più tranquilli. [web:71][web:75]</li>
+            </ul>
+            <p class="card-text" style="margin-top:10px;">
+              Per questo è importante osservare la singola persona, non applicare etichette rigide o
+              aspettarsi che l’autismo “si veda” sempre allo stesso modo. [web:71]
+            </p>
+          </article>
+
+          <aside class="card">
+            <div class="card-icon" aria-hidden="true">🖼️</div>
+            <h3 class="card-title">Immagini e supporti visivi</h3>
+            <p class="card-text" style="margin-bottom:10px;">
+              Schede, agende visive, pittogrammi e immagini aiutano molte persone nello spettro a capire cosa succede
+              e cosa ci si aspetta da loro, riducendo incertezza e sovraccarico cognitivo. [web:72][web:75]
+            </p>
+            <div class="img-grid-2">
+              <figure>
+                <img src="img/agenda-visiva.jpg" alt="Esempio di agenda visiva della giornata" />
+                <figcaption>Agenda visiva della giornata con immagini e orari.</figcaption>
+              </figure>
+              <figure>
+                <img src="img/schede-attivita.jpg" alt="Schede di attività strutturate con immagini" />
+                <figcaption>Schede per spiegare attività passo per passo.</figcaption>
+              </figure>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODI: ABA E TEACCH -->
+    <section id="metodi">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-kicker">Metodi di lavoro</div>
+          <h2 class="section-title">Cosa sono ABA e TEACCH e come li utilizziamo</h2>
+          <p class="section-subtitle">
+            ABA e TEACCH sono due approcci che offrono strumenti utili per strutturare ambienti, attività e obiettivi.
+            Al Centro BluMente li usiamo in modo flessibile, rispettoso e integrato. [web:66][web:67][web:69][web:73]
+          </p>
+        </div>
+
+        <div class="grid-2 reveal" style="align-items:flex-start;">
+          <!-- ABA -->
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📘</div>
+            <h3 class="card-title">ABA – Applied Behavior Analysis</h3>
+            <p class="card-text" style="margin-bottom:8px;">
+              ABA significa “analisi applicata del comportamento”: un insieme di principi e tecniche che studiano
+              come i comportamenti sono influenzati dall’ambiente e da ciò che succede prima e dopo. [web:67][web:79]
+            </p>
+            <p class="card-text" style="margin-bottom:8px;">
+              L’obiettivo non è “cancellare” l’autismo, ma favorire l’acquisizione di abilità utili (comunicazione,
+              autonomie, socialità) e ridurre comportamenti che ostacolano il benessere, rispettando il profilo
+              della persona. [web:67][web:76]
+            </p>
+            <ul class="card-text" style="padding-left:18px; list-style:disc;">
+              <li>definizione di obiettivi chiari, osservabili e misurabili;</li>
+              <li>uso di rinforzi motivanti per aumentare abilità utili;</li>
+              <li>analisi delle situazioni che scatenano difficoltà, per modificarle in modo pratico. [web:67][web:76]</li>
+            </ul>
+            <p class="card-text" style="margin-top:10px;">
+              È fondamentale che l’ABA sia applicata in modo etico, rispettoso e coordinato con famiglia e scuola,
+              evitando pressioni eccessive o richieste non significative per la persona. [web:76]
+            </p>
+            <div class="img-grid-2" style="margin-top:10px;">
+              <figure>
+                <img src="img/aba-sessione.jpg" alt="Terapista che lavora in modo strutturato con un bambino" />
+                <figcaption>Sessione ABA con obiettivi chiari e pause previste.</figcaption>
+              </figure>
+              <figure>
+                <img src="img/aba-materiali.jpg" alt="Materiali strutturati per intervento ABA" />
+                <figcaption>Materiali strutturati per attività mirate.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- TEACCH -->
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📗</div>
+            <h3 class="card-title">TEACCH – Strutturare ambienti e tempi</h3>
+            <p class="card-text" style="margin-bottom:8px;">
+              TEACCH è un modello psicoeducativo nato in North Carolina che si concentra sull’organizzazione degli
+              ambienti, dei tempi e dei materiali per rendere più comprensibile e prevedibile la giornata. [web:66][web:69][web:73]
+            </p>
+            <ul class="card-text" style="padding-left:18px; list-style:disc; margin-bottom:8px;">
+              <li>spazi chiari per attività diverse (lavoro, gioco, pausa);</li>
+              <li>agende visive per mostrare “cosa viene dopo”;</li>
+              <li>materiali organizzati in modo esplicito (cosa usare, dove rimettere);</li>
+              <li>compiti spezzati in piccoli passaggi visivi. [web:66][web:70][web:73]</li>
+            </ul>
+            <p class="card-text" style="margin-bottom:8px;">
+              In TEACCH la famiglia è considerata partner fondamentale: l’idea è trasferire gradualmente strutture e
+              strumenti anche a casa e a scuola, adattandoli al contesto. [web:69][web:73]
+            </p>
+            <div class="img-grid-2">
+              <figure>
+                <img src="img/teacch-ambiente.jpg" alt="Aula organizzata secondo il modello TEACCH con supporti visivi" />
+                <figcaption>Ambiente strutturato con zone di lavoro e supporti visivi.</figcaption>
+              </figure>
+              <figure>
+                <img src="img/teacch-schede.jpg" alt="Esempio di schede e materiali TEACCH" />
+                <figcaption>Schede e materiali organizzati per attività progressive.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+        <!-- ABA + TEACCH INSIEME -->
+        <div class="reveal" style="margin-top:26px;">
+          <div class="section-header" style="margin-bottom:14px;">
+            <div class="section-kicker">In pratica</div>
+            <h3 class="section-title">Come li combiniamo al Centro BluMente</h3>
+            <p class="section-subtitle">
+              Nella pratica quotidiana non applichiamo “pure” etichette, ma scegliamo strumenti utili da ciascun
+              approccio, sempre in dialogo con la persona e la sua famiglia. [web:69][web:73]
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <article class="card">
+              <h4 class="card-title">Esempio di giornata strutturata</h4>
+              <p class="card-text">
+                Una mattinata tipo può prevedere un’agenda visiva TEACCH per mostrare le attività, momenti ABA per
+                lavorare su abilità specifiche (ad esempio richiesta di aiuto, turni di gioco) e tempi di pausa
+                sensoriale in sala dedicata. [web:66][web:67][web:73]
+              </p>
+            </article>
+            <article class="card">
+              <h4 class="card-title">Tabella di sintesi</h4>
+              <p class="card-text">
+                In sintesi, potremmo dire che TEACCH si concentra soprattutto su “dove, quando e come” organizzare
+                gli ambienti, mentre ABA offre strumenti per analizzare e sostenere i comportamenti e le abilità. [web:66][web:67][web:70]
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- STRUTTURE -->
     <section id="strutture">
       <div class="container">
@@ -1146,7 +1373,7 @@
           <h2 class="section-title">Ambienti pensati per calma, chiarezza e prevedibilità</h2>
           <p class="section-subtitle">
             Ogni spazio del centro è organizzato per ridurre rumori inutili, chiarire dove si svolge cosa
-            e offrire possibilità di pausa quando serve.
+            e offrire possibilità di pausa quando serve. [web:72][web:75]
           </p>
         </div>
 
@@ -1178,17 +1405,32 @@
             </p>
           </article>
         </div>
+
+        <div class="img-grid-3 reveal" style="margin-top:18px;">
+          <figure>
+            <img src="img/sala-sensoriale-dettaglio.jpg" alt="Dettaglio della sala sensoriale con luci e materiali tattili" />
+            <figcaption>Dettagli della sala sensoriale con luci e materiali tattili.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/area-giochi-strutturata.jpg" alt="Area giochi strutturata con angoli ben separati" />
+            <figcaption>Area giochi con angoli ben separati e materiali selezionati.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/cucina-educativa.jpg" alt="Laboratorio di cucina educativa per allenare le autonomie" />
+            <figcaption>Laboratorio di cucina educativa per autonomie quotidiane.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!-- FAQ INTERATTIVE -->
+    <!-- FAQ -->
     <section id="faq">
       <div class="container">
         <div class="section-header reveal">
           <div class="section-kicker">Domande frequenti</div>
-          <h2 class="section-title">Cosa vogliono sapere spesso le famiglie</h2>
+          <h2 class="section-title">Cosa chiedono spesso le famiglie prima di iniziare</h2>
           <p class="section-subtitle">
-            Alcune risposte sintetiche alle domande che riceviamo più spesso prima di iniziare un percorso.
+            Alcune risposte sintetiche alle domande che riceviamo più spesso prima di attivare un percorso.
           </p>
         </div>
 
@@ -1201,8 +1443,9 @@
               </button>
               <div class="faq-body">
                 <div class="faq-body-inner">
-                  No. Molte famiglie ci contattano proprio quando stanno cercando di capire se approfondire o meno.
-                  Il primo colloquio serve per ascoltare la vostra situazione e orientare i passi successivi.
+                  No. Molte famiglie ci contattano proprio quando stanno valutando se fare una diagnosi o meno.
+                  Il primo colloquio serve per ascoltare la situazione, orientare i passi successivi e, se necessario,
+                  indirizzare verso i servizi competenti.
                 </div>
               </div>
             </div>
@@ -1214,8 +1457,9 @@
               </button>
               <div class="faq-body">
                 <div class="faq-body-inner">
-                  La durata dipende dagli obiettivi e dall’età. Alcuni interventi hanno una durata definita,
-                  altri si articolano in cicli periodici, con verifiche e momenti di confronto con famiglia e scuola.
+                  La durata dipende dagli obiettivi e dall’età. Alcuni interventi sono cicli brevi su obiettivi
+                  specifici, altri prevedono una presa in carico più continuativa con verifiche periodiche e momenti
+                  di confronto con famiglia e scuola.
                 </div>
               </div>
             </div>
@@ -1228,7 +1472,7 @@
               <div class="faq-body">
                 <div class="faq-body-inner">
                   Sì, quando la famiglia lo desidera. Possiamo confrontarci con docenti ed educatori, contribuire
-                  a PEI e PDP e suggerire adattamenti concreti per la classe e le attività didattiche.
+                  a PEI e PDP e suggerire adattamenti concreti per classe, compiti, valutazione e tempi.
                 </div>
               </div>
             </div>
@@ -1237,26 +1481,27 @@
           <div class="reveal">
             <div class="faq-item">
               <button class="faq-header" type="button">
-                <span class="faq-q">Come si svolge il primo colloquio?</span>
+                <span class="faq-q">Come spiegate ABA e TEACCH a chi non è del settore?</span>
                 <span class="faq-toggle">›</span>
               </button>
               <div class="faq-body">
                 <div class="faq-body-inner">
-                  Dedichiamo tempo all’ascolto della storia, dei dubbi e delle aspettative, raccogliendo informazioni
-                  su punti di forza e difficoltà per proporre, se opportuno, un eventuale percorso.
+                  Dedichiamo tempo a illustrare con esempi concreti cosa significa per la vita di tutti i giorni:
+                  come cambiano gli spazi, quali piccole strategie si possono adottare a casa e a scuola,
+                  quali obiettivi sono realistici e come monitorarli insieme. [web:67][web:76]
                 </div>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-header" type="button">
-                <span class="faq-q">È possibile avere solo consulenze e non un percorso lungo?</span>
+                <span class="faq-q">È possibile avere solo consulenze senza un percorso lungo?</span>
                 <span class="faq-toggle">›</span>
               </button>
               <div class="faq-body">
                 <div class="faq-body-inner">
-                  Sì. In alcuni casi è sufficiente un ciclo di consulenze mirate per introdurre strumenti, routine
-                  o strategie specifiche, senza avviare subito un percorso continuativo.
+                  Sì. In alcuni casi è sufficiente un ciclo di consulenze mirate per introdurre strumenti,
+                  routine o strategie specifiche, senza avviare subito una presa in carico continuativa.
                 </div>
               </div>
             </div>
@@ -1268,8 +1513,8 @@
               </button>
               <div class="faq-body">
                 <div class="faq-body-inner">
-                  Quando necessario, possiamo prevedere spazi di ascolto e attività dedicate anche ai fratelli,
-                  per aiutarli a comprendere meglio la situazione familiare e trovare modi di stare insieme.
+                  Quando necessario, possiamo prevedere momenti di ascolto e attività dedicate anche ai fratelli,
+                  per aiutarli a comprendere meglio la situazione e trovare modi di stare insieme più sereni.
                 </div>
               </div>
             </div>
@@ -1303,8 +1548,6 @@
 
         <div class="form-card reveal">
           <form id="contatto-form" action="https://formsubmit.co/info.centroautismo@gmail.com" method="POST" novalidate>
-            <!-- adatta l’URL se usi un altro servizio -->
-
             <div class="form-row">
               <div class="form-group">
                 <label for="nome">Nome e cognome</label>
@@ -1342,7 +1585,6 @@
               <div class="error-text" id="err-messaggio" style="display:none;">Scrivi almeno una breve descrizione.</div>
             </div>
 
-            <!-- Personalizza se usi FormSubmit -->
             <input type="hidden" name="_next" value="https://abdo35689.github.io/centro-autismo/successo.html" />
             <input type="hidden" name="_captcha" value="false" />
 
@@ -1376,7 +1618,8 @@
           <div class="footer-links">
             <a data-target="chi-siamo">Chi siamo</a>
             <a data-target="servizi">Servizi</a>
-            <a data-target="strutture">Strutture</a>
+            <a data-target="autismo">Autismo</a>
+            <a data-target="metodi">ABA &amp; TEACCH</a>
             <a data-target="faq">FAQ</a>
             <a data-target="contatti">Contatti</a>
           </div>
@@ -1398,13 +1641,13 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT INTERATTIVO -->
+  <!-- JAVASCRIPT -->
   <script>
-    // Scroll morbido per tutti gli elementi con data-target
+    // Scroll morbido
     function scrollToSection(id) {
       const el = document.getElementById(id);
       if (!el) return;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // offset per header
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
 
@@ -1419,18 +1662,17 @@
       });
     });
 
-    // Burger menu mobile
+    // Burger mobile
     const burger = document.getElementById("burger");
     const navMobile = document.getElementById("nav-mobile");
-
     if (burger && navMobile) {
       burger.addEventListener("click", () => {
         navMobile.style.display = navMobile.style.display === "flex" ? "none" : "flex";
       });
     }
 
-    // Evidenziazione voce di menu attiva
-    const sections = ["chi-siamo", "servizi", "strutture", "faq", "contatti"].map((id) =>
+    // Evidenziazione voci menu
+    const sections = ["chi-siamo", "servizi", "autismo", "metodi", "strutture", "faq", "contatti"].map((id) =>
       document.getElementById(id)
     );
     const navLinks = document.querySelectorAll("#nav-desktop a[data-target]");
@@ -1455,7 +1697,7 @@
     window.addEventListener("scroll", onScrollHighlight);
     window.addEventListener("load", onScrollHighlight);
 
-    // Animazioni reveal on scroll
+    // Reveal animazioni
     const revealEls = document.querySelectorAll(".reveal");
     function handleReveal() {
       const trigger = window.innerHeight * 0.85;
@@ -1479,7 +1721,7 @@
       });
     });
 
-    // Validazione form semplice
+    // Validazione form
     const form = document.getElementById("contatto-form");
     if (form) {
       form.addEventListener("submit", (e) => {
@@ -1495,7 +1737,6 @@
         const errMotivo = document.getElementById("err-motivo");
         const errMessaggio = document.getElementById("err-messaggio");
 
-        // Reset errori
         [nome, email, motivo, messaggio].forEach((f) => f.classList.remove("input-error"));
         [errNome, errEmail, errMotivo, errMessaggio].forEach((e) => (e.style.display = "none"));
 
